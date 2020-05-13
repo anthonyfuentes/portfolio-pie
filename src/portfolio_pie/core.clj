@@ -1,6 +1,9 @@
-(ns portfolio-pie.core)
+(ns portfolio-pie.core
+  (:require [portfolio-pie.parsing.vanguard :refer [parse-assets]]
+            [portfolio-pie.composition.pie :refer [type-composition]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn -main [& [filepath]]
+  (-> filepath
+      parse-assets
+      type-composition
+      (println)))
