@@ -1,10 +1,9 @@
 (ns portfolio-pie.parsing.vanguard
   (:require [portfolio-pie.csv.vanguard :refer [vectorize]]
             [portfolio-pie.filtering.vanguard :refer [select-assets]]
-            [portfolio-pie.casting.vanguard :refer [cast-assets]] ))
+            [portfolio-pie.casting.vanguard :refer [cast-assets cast-map]]))
 
-(def labels
-  [:name :symbol :shares :share-price :total-value])
+(def labels (keys cast-map))
 
 (defn label-asset [asset]
   (zipmap labels asset))

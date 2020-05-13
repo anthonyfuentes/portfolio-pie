@@ -2,7 +2,7 @@
   (:require [portfolio-pie.assets.map :refer [asset-type-map]]))
 
 (defn get-type [asset]
-  (get asset-type-map (:symbol asset)))
+  (get asset-type-map (:ticker asset)))
 
 (defn place-in-group [groups asset]
   (let [atype (get-type asset)]

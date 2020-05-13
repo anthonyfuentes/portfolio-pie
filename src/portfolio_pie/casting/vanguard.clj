@@ -3,7 +3,7 @@
 
 (def cast-map
   {:name str
-   :symbol str
+   :ticker str
    :shares ->number
    :share-price ->number
    :total-value ->number})
