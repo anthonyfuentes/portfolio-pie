@@ -1,9 +1,8 @@
 (ns portfolio-pie.core
   (:require [portfolio-pie.parsing.vanguard :refer [parse-assets]]
-            [portfolio-pie.composition.pie :refer [type-composition]]))
+            [portfolio-pie.reporting.composition :refer [summarize]]))
 
-(defn -main [& [filepath]]
-  (-> filepath
+(defn -main [& [input-file output-file]]
+  (-> input-file
       parse-assets
-      type-composition
-      (println)))
+      (summarize output-file)))
